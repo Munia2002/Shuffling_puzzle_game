@@ -1,0 +1,992 @@
+import numpy as np
+from OpenGL.GL import *
+from OpenGL.GLUT import *
+import random
+import time
+flag = True
+lst = []
+def random_generator(i, x, y):
+    if i==0:
+        draw_lines(x - 75, y - 75, x - 425, y - 75)
+        draw_lines(x - 375, y - 125, x - 375, y - 250)
+        draw_lines(x - 125, y - 125, x - 125, y - 250)
+        draw_lines(x - 100, y - 150, x - 100, y - 300)
+        draw_lines(x - 425, y - 275, x - 425, y - 425)
+        draw_lines(x - 350, y - 350, x - 150, y - 350)
+        draw_lines(x - 350, y - 200, x - 150, y - 200)
+        draw_lines(x - 400, y - 150, x - 400, y - 250)
+        draw_lines(x - 175, y - 275, x - 175, y - 325)
+        draw_lines(x - 300, y - 325, x - 250, y - 325)
+        draw_lines(x - 275, y - 100, x - 325, y - 100)
+        draw_lines(x - 175, y - 325, x - 125, y - 325)
+        draw_lines(x - 225, y - 225, x - 200, y - 225)
+        draw_lines(x - 200, y - 300, x - 175, y - 300)
+        draw_lines(x - 350, y - 250, x - 350, y - 300)
+        draw_lines(x - 275, y - 275, x - 325, y - 275)
+        draw_lines(x - 250, y - 175, x - 275, y - 175)
+        draw_lines(x - 300, y - 200, x - 300, y - 150)
+        draw_lines(x - 250, y - 150, x - 200, y - 150)
+        draw_lines(x - 250, y - 475, x - 250, y - 375)
+        draw_lines(x - 375, y - 250, x - 475, y - 250)
+        draw_lines(x - 125, y - 250, x - 25, y - 250)
+        draw_lines(x - 250, y - 125, x - 250, y - 25)
+        draw_lines(x - 400, y - 400, x - 400, y - 350)
+        draw_lines(x - 400, y - 400, x - 350, y - 400)
+        draw_lines(x - 100, y - 400, x - 100, y - 350)
+        draw_lines(x - 100, y - 400, x - 150, y - 400)
+        draw_lines(x - 350, y - 100, x - 400, y - 100)
+        draw_lines(x - 400, y - 150, x - 400, y - 100)
+        draw_lines(x - 150, y - 100, x - 100, y - 100)
+        draw_lines(x - 100, y - 150, x - 100, y - 100)
+        draw_lines(x - 250, y - 350, x - 200, y - 350)
+        draw_lines(x - 250, y - 200, x - 200, y - 200)
+        draw_lines(x - 250, y - 200, x - 300, y - 200)
+        draw_lines(x - 300, y - 250, x - 300, y - 300)
+        draw_lines(x - 250, y - 300, x - 200, y - 300)
+        draw_lines(x - 450, y - 450, x - 450, y - 400)
+        draw_lines(x - 450, y - 450, x - 400, y - 450)
+        draw_lines(x - 50, y - 450, x - 50, y - 400)
+        draw_lines(x - 50, y - 450, x - 100, y - 450)
+        draw_lines(x - 400, y - 50, x - 450, y - 50)
+        draw_lines(x - 450, y - 100, x - 450, y - 50)
+        draw_lines(x - 100, y - 50, x - 50, y - 50)
+        draw_lines(x - 50, y - 100, x - 50, y - 50)
+        draw_lines(x - 175, y - 400, x - 200, y - 400)
+        draw_lines(x - 250, y - 300, x - 200, y - 300)
+        draw_lines(x - 250, y - 350, x - 200, y - 350)
+        draw_lines(x - 400, y - 250, x - 400, y - 300)
+        draw_lines(x - 350, y - 350, x - 400, y - 350)
+        draw_lines(x - 300, y - 350, x - 250, y - 350)
+        draw_lines(x - 400, y - 400, x - 400, y - 425)
+        draw_lines(x - 325, y - 475, x - 175, y - 475)
+        draw_lines(x - 325, y - 475, x - 325, y - 450)
+        draw_lines(x - 450, y - 325, x - 450, y - 350)
+        draw_lines(x - 475, y - 350, x - 450, y - 350)
+        draw_lines(x - 25, y - 325, x - 50, y - 325)
+        draw_lines(x - 50, y - 325, x - 50, y - 300)
+        draw_lines(x - 325, y - 375, x - 325, y - 425)
+        draw_lines(x - 175, y - 425, x - 325, y - 425)
+        draw_lines(x - 125, y - 475, x - 125, y - 450)
+        draw_lines(x - 75, y - 475, x - 75, y - 450)
+        draw_lines(x - 125, y - 450, x - 75, y - 450)
+        draw_lines(x - 250, y - 25, x - 250, y - 125)
+        draw_lines(x - 225, y - 275, x - 225, y - 213)
+        draw_lines(x - 375, y - 475, x - 375, y - 450)
+        draw_lines(x - 150, y - 250, x - 125, y - 250)
+        draw_lines(x - 200, y - 400, x - 200, y - 375)
+        draw_lines(x - 375, y - 100, x - 350, y - 100)
+        draw_lines(x - 300, y - 300, x - 275, y - 300)
+        draw_lines(x - 325, y - 225, x - 300, y - 225)
+        draw_lines(x - 275, y - 200, x - 250, y - 200)
+        draw_lines(x - 325, y - 100, x - 300, y - 100)
+        draw_lines(x - 250, y - 275, x - 225, y - 275)
+        draw_lines(x - 75, y - 350, x - 50, y - 350)
+        draw_lines(x - 175, y - 150, x - 150, y - 150)
+        draw_lines(x - 100, y - 250, x - 75, y - 250)
+        draw_lines(x - 125, y - 400, x - 100, y - 400)
+        draw_lines(x - 400, y - 225, x - 375, y - 225)
+        draw_lines(x - 250, y - 300, x - 225, y - 300)
+        draw_lines(x - 250, y - 150, x - 225, y - 150)
+        draw_lines(x - 175, y - 375, x - 150, y - 375)
+        draw_lines(x - 125, y - 425, x - 100, y - 425)
+        draw_lines(x - 425, y - 150, x - 400, y - 150)
+        draw_lines(x - 400, y - 325, x - 375, y - 325)
+        draw_lines(x - 325, y - 250, x - 300, y - 250)
+        draw_lines(x - 400, y - 350, x - 375, y - 350)
+        draw_lines(x - 125, y - 150, x - 100, y - 150)
+        draw_lines(x - 100, y - 375, x - 75, y - 375)
+        draw_lines(x - 100, y - 150, x - 75, y - 150)
+        draw_lines(x - 75, y - 175, x - 50, y - 175)
+        draw_lines(x - 425, y - 400, x - 400, y - 400)
+        draw_lines(x - 300, y - 175, x - 275, y - 175)
+        draw_lines(x - 425, y - 300, x - 400, y - 300)
+        draw_lines(x - 200, y - 125, x - 175, y - 125)
+        draw_lines(x - 125, y - 375, x - 100, y - 375)
+        draw_lines(x - 375, y - 425, x - 350, y - 425)
+        draw_lines(x - 275, y - 350, x - 250, y - 350)
+        draw_lines(x - 150, y - 400, x - 125, y - 400)
+        draw_lines(x - 400, y - 250, x - 375, y - 250)
+        draw_lines(x - 150, y - 250, x - 125, y - 250)
+        draw_lines(x - 275, y - 400, x - 250, y - 400)
+        draw_lines(x - 425, y - 175, x - 400, y - 175)
+        draw_lines(x - 100, y - 325, x - 75, y - 325)
+        draw_lines(x - 200, y - 300, x - 175, y - 300)
+        draw_lines(x - 425, y - 350, x - 400, y - 350)
+        draw_lines(x - 250, y - 325, x - 225, y - 325)
+        draw_lines(x - 75, y - 100, x - 50, y - 100)
+        draw_lines(x - 400, y - 375, x - 375, y - 375)
+        draw_lines(x - 125, y - 250, x - 100, y - 250)
+        draw_lines(x - 350, y - 125, x - 325, y - 125)
+        draw_lines(x - 150, y - 325, x - 125, y - 325)
+        draw_lines(x - 150, y - 100, x - 125, y - 100)
+        draw_lines(x - 175, y - 375, x - 150, y - 375)
+        draw_lines(x - 350, y - 375, x - 325, y - 375)
+        draw_lines(x - 150, y - 400, x - 125, y - 400)
+        draw_lines(x - 150, y - 150, x - 125, y - 150)
+        draw_lines(x - 300, y - 400, x - 275, y - 400)
+        draw_lines(x - 150, y - 425, x - 125, y - 425)
+        draw_lines(x - 150, y - 375, x - 125, y - 375)
+        draw_lines(x - 100, y - 150, x - 75, y - 150)
+        draw_lines(x - 125, y - 100, x - 100, y - 100)
+        draw_lines(x - 325, y - 300, x - 300, y - 300)
+        draw_lines(x - 175, y - 350, x - 150, y - 350)
+        draw_lines(x - 175, y - 200, x - 150, y - 200)
+        draw_lines(x - 325, y - 400, x - 300, y - 400)
+        draw_lines(x - 150, y - 300, x - 150, y - 250)
+        draw_lines(x - 100, y - 200, x - 75, y - 200)
+        draw_lines(x - 400, y - 300, x - 375, y - 300)
+        draw_lines(x - 350, y - 225, x - 325, y - 225)
+        draw_lines(x - 350, y - 275, x - 325, y - 275)
+        draw_lines(x - 150, y - 225, x - 125, y - 225)
+        draw_lines(x - 350, y - 425, x - 325, y - 425)
+        draw_lines(x - 200, y - 150, x - 175, y - 150)
+        draw_lines(x - 375, y - 175, x - 350, y - 175)
+        draw_lines(x - 400, y - 375, x - 375, y - 375)
+        draw_lines(x - 400, y - 150, x - 375, y - 150)
+        draw_lines(x - 150, y - 200, x - 125, y - 200)
+        draw_lines(x - 350, y - 200, x - 325, y - 200)
+        draw_lines(x - 200, y - 375, x - 175, y - 375)
+        draw_lines(x - 100, y - 100, x - 75, y - 100)
+        draw_lines(x - 75, y - 450, x - 50, y - 450)
+        draw_lines(x - 400, y - 400, x - 375, y - 400)
+        draw_lines(x - 150, y - 350, x - 125, y - 350)
+        draw_lines(x - 100, y - 400, x - 100, y - 375)
+
+    if i == 1:
+        draw_lines(x - 250, y - 100, x - 200, y - 100)
+        draw_lines(x - 300, y - 350, x - 250, y - 350)
+        draw_lines(x - 250, y - 300, x - 300, y - 300)
+        draw_lines(x - 350, y - 250, x - 400, y - 250)
+        draw_lines(x - 200, y - 300, x - 200, y - 250)
+        draw_lines(x - 325, y - 225, x - 275, y - 225)
+        draw_lines(x - 350, y - 400, x - 300, y - 400)
+        draw_lines(x - 150, y - 300, x - 100, y - 300)
+        draw_lines(x - 375, y - 175, x - 325, y - 175)
+        draw_lines(x - 125, y - 375, x - 75, y - 375)
+        draw_lines(x - 325, y - 150, x - 275, y - 150)
+        draw_lines(x - 350, y - 150, x - 350, y - 200)
+        draw_lines(x - 150, y - 325, x - 150, y - 375)
+        draw_lines(x - 225, y - 425, x - 175, y - 425)
+        draw_lines(x - 75, y - 275, x - 75, y - 325)
+        draw_lines(x - 300, y - 125, x - 250, y - 125)
+        draw_lines(x - 200, y - 125, x - 200, y - 175)
+        draw_lines(x - 325, y - 275, x - 325, y - 250)
+        draw_lines(x - 100, y - 175, x - 75, y - 175)
+        draw_lines(x - 425, y - 375, x - 400, y - 375)
+        draw_lines(x - 400, y - 125, x - 400, y - 150)
+        draw_lines(x - 150, y - 125, x - 125, y - 125)
+        draw_lines(x - 375, y - 425, x - 350, y - 425)
+        draw_lines(x - 300, y - 250, x - 250, y - 250)
+        draw_lines(x - 250, y - 400, x - 275, y - 400)
+        draw_lines(x - 100, y - 225, x - 50, y - 225)
+        draw_lines(x - 175, y - 350, x - 175, y - 300)
+        draw_lines(x - 400, y - 325, x - 375, y - 325)
+        draw_lines(x - 175, y - 275, x - 175, y - 250)
+        draw_lines(x - 250, y - 425, x - 225, y - 425)
+        draw_lines(x - 325, y - 400, x - 325, y - 375)
+        draw_lines(x - 350, y - 225, x - 300, y - 225)
+        draw_lines(x - 400, y - 200, x - 400, y - 175)
+        draw_lines(x - 375, y - 325, x - 350, y - 325)
+        draw_lines(x - 100, y - 350, x - 75, y - 350)
+        draw_lines(x - 225, y - 350, x - 200, y - 350)
+        draw_lines(x - 425, y - 400, x - 400, y - 400)
+        draw_lines(x - 100, y - 375, x - 75, y - 375)
+        draw_lines(x - 400, y - 350, x - 375, y - 350)
+        draw_lines(x - 125, y - 150, x - 100, y - 150)
+        draw_lines(x - 150, y - 425, x - 125, y - 425)
+        draw_lines(x - 400, y - 100, x - 375, y - 100)
+        draw_lines(x - 325, y - 175, x - 300, y - 175)
+        draw_lines(x - 100, y - 400, x - 75, y - 400)
+        draw_lines(x - 125, y - 400, x - 100, y - 400)
+        draw_lines(x - 400, y - 375, x - 375, y - 375)
+        draw_lines(x - 425, y - 350, x - 400, y - 350)
+        draw_lines(x - 175, y - 325, x - 150, y - 325)
+        draw_lines(x - 250, y - 300, x - 225, y - 300)
+        draw_lines(x - 250, y - 150, x - 225, y - 150)
+        draw_lines(x - 175, y - 350, x - 175, y - 375)
+        draw_lines(x - 150, y - 375, x - 125, y - 375)
+        draw_lines(x - 425, y - 125, x - 400, y - 125)
+        draw_lines(x - 325, y - 250, x - 325, y - 225)
+        draw_lines(x - 150, y - 400, x - 150, y - 425)
+        draw_lines(x - 200, y - 350, x - 175, y - 350)
+        draw_lines(x - 400, y - 250, x - 375, y - 250)
+        draw_lines(x - 150, y - 250, x - 125, y - 250)
+        draw_lines(x - 275, y - 400, x - 250, y - 400)
+        draw_lines(x - 425, y - 175, x - 400, y - 175)
+        draw_lines(x - 425, y - 325, x - 400, y - 325)
+        draw_lines(x - 400, y - 150, x - 375, y - 150)
+        draw_lines(x - 250, y - 275, x - 225, y - 275)
+        draw_lines(x - 75, y - 300, x - 50, y - 300)
+        draw_lines(x - 150, y - 200, x - 125, y - 200)
+        draw_lines(x - 300, y - 300, x - 300, y - 325)
+        draw_lines(x - 150, y - 300, x - 125, y - 300)
+        draw_lines(x - 200, y - 300, x - 175, y - 300)
+        draw_lines(x - 325, y - 300, x - 300, y - 300)
+        draw_lines(x - 250, y - 450, x - 225, y - 450)
+        draw_lines(x - 350, y - 300, x - 325, y - 300)
+        draw_lines(x - 200, y - 275, x - 175, y - 275)
+        draw_lines(x - 400, y - 225, x - 375, y - 225)
+        draw_lines(x - 350, y - 275, x - 325, y - 275)
+        draw_lines(x - 125, y - 275, x - 100, y - 275)
+        draw_lines(x - 400, y - 425, x - 375, y - 425)
+        draw_lines(x - 325, y - 275, x - 300, y - 275)
+        draw_lines(x - 175, y - 200, x - 150, y - 200)
+        draw_lines(x - 100, y - 100, x - 75, y - 100)
+        draw_lines(x - 100, y - 125, x - 75, y - 125)
+        draw_lines(x - 75, y - 400, x - 75, y - 375)
+        draw_lines(x - 100, y - 250, x - 75, y - 250)
+        draw_lines(x - 400, y - 175, x - 375, y - 175)
+        draw_lines(x - 150, y - 150, x - 125, y - 150)
+        draw_lines(x - 150, y - 225, x - 125, y - 225)
+        draw_lines(x - 175, y - 300, x - 150, y - 300)
+        draw_lines(x - 425, y - 300, x - 400, y - 300)
+        draw_lines(x - 425, y - 200, x - 400, y - 200)
+        draw_lines(x - 75, y - 150, x - 50, y - 150)
+        draw_lines(x - 75, y - 175, x - 50, y - 175)
+        draw_lines(x - 300, y - 150, x - 275, y - 150)
+        draw_lines(x - 325, y - 375, x - 300, y - 375)
+        draw_lines(x - 250, y - 200, x - 225, y - 200)
+        draw_lines(x - 275, y - 100, x - 250, y - 100)
+        draw_lines(x - 425, y - 425, x - 400, y - 425)
+        draw_lines(x - 400, y - 125, x - 375, y - 125)
+        draw_lines(x - 375, y - 225, x - 350, y - 225)
+        draw_lines(x - 100, y - 175, x - 75, y - 175)
+        draw_lines(x - 400, y - 275, x - 375, y - 275)
+        draw_lines(x - 200, y - 400, x - 175, y - 400)
+        draw_lines(x - 400, y - 300, x - 375, y - 300)
+        draw_lines(x - 300, y - 350, x - 275, y - 350)
+        draw_lines(x - 375, y - 375, x - 350, y - 375)
+        draw_lines(x - 200, y - 175, x - 175, y - 175)
+        draw_lines(x - 150, y - 300, x - 150, y - 275)
+        draw_lines(x - 75, y - 100, x - 50, y - 100)
+        draw_lines(x - 150, y - 350, x - 125, y - 350)
+        draw_lines(x - 150, y - 125, x - 125, y - 125)
+        draw_lines(x - 425, y - 450, x - 400, y - 450)
+        draw_lines(x - 300, y - 275, x - 250, y - 275)
+        draw_lines(x - 275, y - 375, x - 250, y - 375)
+        draw_lines(x - 250, y - 325, x - 275, y - 325)
+        draw_lines(x - 100, y - 275, x - 75, y - 275)
+        draw_lines(x - 100, y - 350, x - 75, y - 350)
+        draw_lines(x - 125, y - 425, x - 100, y - 425)
+        draw_lines(x - 400, y - 425, x - 375, y - 425)
+        draw_lines(x - 350, y - 325, x - 325, y - 325)
+        draw_lines(x - 350, y - 100, x - 325, y - 100)
+        draw_lines(x - 100, y - 325, x - 75, y - 325)
+        draw_lines(x - 175, y - 250, x - 175, y - 225)
+        draw_lines(x - 325, y - 350, x - 300, y - 350)
+        draw_lines(x - 200, y - 200, x - 175, y - 200)
+        draw_lines(x - 250, y - 225, x - 225, y - 225)
+        draw_lines(x - 75, y - 425, x - 50, y - 425)
+        draw_lines(x - 250, y - 75, x - 225, y - 75)
+        draw_lines(x - 275, y - 325, x - 250, y - 325)
+        draw_lines(x - 150, y - 400, x - 125, y - 400)
+        draw_lines(x - 150, y - 150, x - 125, y - 150)
+        draw_lines(x - 300, y - 400, x - 275, y - 400)
+        draw_lines(x - 400, y - 125, x - 400, y - 250)
+        draw_lines(x - 425, y - 250, x - 425, y - 375)
+        draw_lines(x - 385, y - 225, x - 385, y - 300)
+        draw_lines(x - 250, y - 175, x - 250, y - 325)
+        draw_lines(x - 100, y - 213, x - 100, y - 275)
+        draw_lines(x - 75, y - 125, x - 75, y - 250)
+        draw_lines(x - 150, y - 225, x - 150, y - 100)
+
+    if i == 2:
+        draw_lines(x - 75, y - 75, x - 425, y - 75)
+        draw_lines(x - 375, y - 125, x - 375, y - 250)
+        draw_lines(x - 125, y - 125, x - 125, y - 250)
+        draw_lines(x - 100, y - 150, x - 100, y - 300)
+        draw_lines(x - 425, y - 275, x - 425, y - 425)
+        draw_lines(x - 400, y - 150, x - 400, y - 250)
+        draw_lines(x - 175, y - 275, x - 175, y - 325)
+        draw_lines(x - 300, y - 325, x - 250, y - 325)
+        draw_lines(x - 275, y - 100, x - 325, y - 100)
+        draw_lines(x - 175, y - 325, x - 125, y - 325)
+        draw_lines(x - 400, y - 150, x - 400, y - 100)
+        draw_lines(x - 150, y - 100, x - 100, y - 100)
+        draw_lines(x - 100, y - 150, x - 100, y - 100)
+        draw_lines(x - 250, y - 350, x - 200, y - 350)
+        draw_lines(x - 250, y - 200, x - 200, y - 200)
+        draw_lines(x - 250, y - 200, x - 300, y - 200)
+        draw_lines(x - 300, y - 250, x - 300, y - 300)
+        draw_lines(x - 250, y - 300, x - 200, y - 300)
+        draw_lines(x - 375, y - 350, x - 375, y - 350)
+        draw_lines(x - 175, y - 400, x - 200, y - 400)
+        draw_lines(x - 250, y - 300, x - 200, y - 300)
+        draw_lines(x - 250, y - 350, x - 200, y - 350)
+        draw_lines(x - 400, y - 250, x - 400, y - 300)
+        draw_lines(x - 350, y - 350, x - 400, y - 350)
+        draw_lines(x - 300, y - 350, x - 250, y - 350)
+        draw_lines(x - 400, y - 400, x - 400, y - 425)
+        draw_lines(x - 150, y - 250, x - 125, y - 250)
+        draw_lines(x - 200, y - 400, x - 200, y - 375)
+        draw_lines(x - 300, y - 300, x - 275, y - 300)
+        draw_lines(x - 325, y - 225, x - 300, y - 225)
+        draw_lines(x - 275, y - 200, x - 250, y - 200)
+        draw_lines(x - 325, y - 100, x - 300, y - 100)
+        draw_lines(x - 250, y - 275, x - 225, y - 275)
+        draw_lines(x - 75, y - 350, x - 50, y - 350)
+        draw_lines(x - 175, y - 150, x - 150, y - 150)
+        draw_lines(x - 100, y - 250, x - 75, y - 250)
+        draw_lines(x - 125, y - 400, x - 100, y - 400)
+        draw_lines(x - 400, y - 225, x - 375, y - 225)
+        draw_lines(x - 250, y - 300, x - 225, y - 300)
+        draw_lines(x - 250, y - 150, x - 225, y - 150)
+        draw_lines(x - 175, y - 375, x - 150, y - 375)
+        draw_lines(x - 125, y - 425, x - 100, y - 425)
+        draw_lines(x - 425, y - 150, x - 400, y - 150)
+        draw_lines(x - 400, y - 325, x - 375, y - 325)
+        draw_lines(x - 325, y - 250, x - 300, y - 250)
+        draw_lines(x - 400, y - 350, x - 375, y - 350)
+        draw_lines(x - 125, y - 150, x - 100, y - 150)
+        draw_lines(x - 100, y - 375, x - 75, y - 375)
+        draw_lines(x - 100, y - 150, x - 75, y - 150)
+        draw_lines(x - 75, y - 175, x - 50, y - 175)
+        draw_lines(x - 425, y - 400, x - 400, y - 400)
+        draw_lines(x - 300, y - 175, x - 275, y - 175)
+        draw_lines(x - 425, y - 300, x - 400, y - 300)
+        draw_lines(x - 200, y - 125, x - 175, y - 125)
+        draw_lines(x - 125, y - 375, x - 100, y - 375)
+        draw_lines(x - 375, y - 425, x - 350, y - 425)
+        draw_lines(x - 275, y - 350, x - 250, y - 350)
+        draw_lines(x - 150, y - 400, x - 125, y - 400)
+        draw_lines(x - 400, y - 250, x - 375, y - 250)
+        draw_lines(x - 150, y - 250, x - 125, y - 250)
+        draw_lines(x - 275, y - 400, x - 250, y - 400)
+        draw_lines(x - 425, y - 175, x - 400, y - 175)
+        draw_lines(x - 100, y - 325, x - 75, y - 325)
+        draw_lines(x - 200, y - 300, x - 175, y - 300)
+        draw_lines(x - 425, y - 350, x - 400, y - 350)
+        draw_lines(x - 250, y - 325, x - 225, y - 325)
+        draw_lines(x - 75, y - 100, x - 50, y - 100)
+        draw_lines(x - 400, y - 375, x - 375, y - 375)
+        draw_lines(x - 125, y - 250, x - 100, y - 250)
+        draw_lines(x - 350, y - 125, x - 325, y - 125)
+        draw_lines(x - 150, y - 325, x - 125, y - 325)
+        draw_lines(x - 150, y - 100, x - 125, y - 100)
+        draw_lines(x - 250, y - 100, x - 200, y - 100)
+        draw_lines(x - 300, y - 350, x - 250, y - 350)
+        draw_lines(x - 250, y - 300, x - 300, y - 300)
+        draw_lines(x - 350, y - 250, x - 400, y - 250)
+        draw_lines(x - 200, y - 300, x - 200, y - 250)
+        draw_lines(x - 325, y - 225, x - 275, y - 225)
+        draw_lines(x - 350, y - 400, x - 300, y - 400)
+        draw_lines(x - 150, y - 300, x - 100, y - 300)
+        draw_lines(x - 375, y - 175, x - 325, y - 175)
+        draw_lines(x - 125, y - 375, x - 75, y - 375)
+        draw_lines(x - 325, y - 150, x - 275, y - 150)
+        draw_lines(x - 350, y - 150, x - 350, y - 200)
+        draw_lines(x - 150, y - 325, x - 150, y - 375)
+        draw_lines(x - 225, y - 425, x - 175, y - 425)
+        draw_lines(x - 75, y - 275, x - 75, y - 325)
+        draw_lines(x - 300, y - 125, x - 250, y - 125)
+        draw_lines(x - 200, y - 125, x - 200, y - 175)
+        draw_lines(x - 325, y - 275, x - 325, y - 250)
+        draw_lines(x - 100, y - 175, x - 75, y - 175)
+        draw_lines(x - 425, y - 375, x - 400, y - 375)
+        draw_lines(x - 400, y - 125, x - 400, y - 150)
+        draw_lines(x - 150, y - 125, x - 125, y - 125)
+        draw_lines(x - 375, y - 425, x - 350, y - 425)
+        draw_lines(x - 300, y - 250, x - 250, y - 250)
+        draw_lines(x - 250, y - 400, x - 275, y - 400)
+        draw_lines(x - 100, y - 225, x - 50, y - 225)
+        draw_lines(x - 175, y - 350, x - 175, y - 300)
+        draw_lines(x - 400, y - 325, x - 375, y - 325)
+        draw_lines(x - 175, y - 275, x - 175, y - 250)
+        draw_lines(x - 250, y - 425, x - 225, y - 425)
+        draw_lines(x - 325, y - 400, x - 325, y - 375)
+        draw_lines(x - 350, y - 225, x - 300, y - 225)
+        draw_lines(x - 400, y - 200, x - 400, y - 175)
+        draw_lines(x - 375, y - 325, x - 350, y - 325)
+        draw_lines(x - 100, y - 350, x - 75, y - 350)
+        draw_lines(x - 225, y - 350, x - 200, y - 350)
+        draw_lines(x - 425, y - 400, x - 400, y - 400)
+        draw_lines(x - 100, y - 375, x - 75, y - 375)
+        draw_lines(x - 400, y - 350, x - 375, y - 350)
+        draw_lines(x - 125, y - 150, x - 100, y - 150)
+        draw_lines(x - 150, y - 425, x - 125, y - 425)
+        draw_lines(x - 400, y - 100, x - 375, y - 100)
+        draw_lines(x - 325, y - 175, x - 300, y - 175)
+        draw_lines(x - 100, y - 400, x - 75, y - 400)
+        draw_lines(x - 125, y - 400, x - 100, y - 400)
+        draw_lines(x - 400, y - 375, x - 375, y - 375)
+        draw_lines(x - 425, y - 350, x - 400, y - 350)
+        draw_lines(x - 175, y - 325, x - 150, y - 325)
+        draw_lines(x - 250, y - 300, x - 225, y - 300)
+        draw_lines(x - 250, y - 150, x - 225, y - 150)
+        draw_lines(x - 175, y - 350, x - 175, y - 375)
+        draw_lines(x - 150, y - 375, x - 125, y - 375)
+        draw_lines(x - 425, y - 125, x - 400, y - 125)
+        draw_lines(x - 325, y - 250, x - 325, y - 225)
+        draw_lines(x - 150, y - 400, x - 150, y - 425)
+        draw_lines(x - 200, y - 350, x - 175, y - 350)
+        draw_lines(x - 400, y - 250, x - 375, y - 250)
+        draw_lines(x - 150, y - 250, x - 125, y - 250)
+        draw_lines(x - 275, y - 400, x - 250, y - 400)
+        draw_lines(x - 425, y - 175, x - 400, y - 175)
+        draw_lines(x - 400, y - 125, x - 400, y - 250)
+        draw_lines(x - 425, y - 250, x - 425, y - 375)
+        draw_lines(x - 385, y - 225, x - 385, y - 300)
+        draw_lines(x - 250, y - 175, x - 250, y - 325)
+        draw_lines(x - 75, y - 125, x - 75, y - 250)
+        draw_lines(x - 150, y - 225, x - 150, y - 100)
+        draw_lines(x - 325, y - 425, x - 325, y - 400)
+        draw_lines(x - 125, y - 400, x - 125, y - 425)
+        draw_lines(x - 425, y - 300, x - 400, y - 300)
+        draw_lines(x - 200, y - 325, x - 175, y - 325)
+        draw_lines(x - 300, y - 275, x - 250, y - 275)
+        draw_lines(x - 350, y - 350, x - 300, y - 350)
+        draw_lines(x - 300, y - 375, x - 275, y - 375)
+        draw_lines(x - 300, y - 350, x - 275, y - 350)
+        draw_lines(x - 400, y - 325, x - 400, y - 350)
+        draw_lines(x - 350, y - 325, x - 325, y - 325)
+        draw_lines(x - 400, y - 400, x - 375, y - 400)
+        draw_lines(x - 325, y - 350, x - 325, y - 325)
+        draw_lines(x - 300, y - 275, x - 275, y - 275)
+        draw_lines(x - 300, y - 375, x - 275, y - 375)
+
+    if i == 3:
+        draw_lines(x - 425, y - 250, x - 425, y - 400)
+        draw_lines(x - 350, y - 300, x - 150, y - 300)
+        draw_lines(x - 350, y - 325, x - 150, y - 325)
+        draw_lines(x - 400, y - 250, x - 400, y - 150)
+        draw_lines(x - 175, y - 250, x - 175, y - 300)
+        draw_lines(x - 300, y - 300, x - 275, y - 300)
+        draw_lines(x - 275, y - 150, x - 325, y - 150)
+        draw_lines(x - 175, y - 300, x - 125, y - 300)
+        draw_lines(x - 225, y - 275, x - 200, y - 275)
+        draw_lines(x - 200, y - 250, x - 175, y - 250)
+        draw_lines(x - 350, y - 275, x - 325, y - 275)
+        draw_lines(x - 275, y - 250, x - 250, y - 250)
+        draw_lines(x - 250, y - 150, x - 225, y - 150)
+        draw_lines(x - 300, y - 375, x - 250, y - 375)
+        draw_lines(x - 250, y - 450, x - 250, y - 400)
+        draw_lines(x - 375, y - 275, x - 475, y - 275)
+        draw_lines(x - 250, y - 150, x - 250, y - 125)
+        draw_lines(x - 350, y - 200, x - 250, y - 200)
+        draw_lines(x - 250, y - 250, x - 200, y - 250)
+        draw_lines(x - 250, y - 350, x - 200, y - 350)
+        draw_lines(x - 350, y - 350, x - 400, y - 350)
+        draw_lines(x - 300, y - 350, x - 250, y - 350)
+        draw_lines(x - 400, y - 375, x - 375, y - 375)
+        draw_lines(x - 300, y - 175, x - 250, y - 175)
+        draw_lines(x - 250, y - 175, x - 200, y - 175)
+        draw_lines(x - 450, y - 250, x - 400, y - 250)
+        draw_lines(x - 400, y - 325, x - 350, y - 325)
+        draw_lines(x - 325, y - 150, x - 375, y - 150)
+        draw_lines(x - 150, y - 325, x - 125, y - 325)
+        draw_lines(x - 150, y - 250, x - 125, y - 250)
+        draw_lines(x - 175, y - 350, x - 150, y - 350)
+        draw_lines(x - 350, y - 375, x - 325, y - 375)
+        draw_lines(x - 150, y - 375, x - 125, y - 375)
+        draw_lines(x - 300, y - 400, x - 250, y - 400)
+        draw_lines(x - 250, y - 425, x - 200, y - 425)
+        draw_lines(x - 250, y - 400, x - 250, y - 375)
+        draw_lines(x - 400, y - 250, x - 375, y - 250)
+        draw_lines(x - 150, y - 250, x - 125, y - 250)
+        draw_lines(x - 300, y - 425, x - 250, y - 425)
+        draw_lines(x - 250, y - 375, x - 200, y - 375)
+        draw_lines(x - 250, y - 400, x - 200, y - 400)
+        draw_lines(x - 375, y - 400, x - 350, y - 400)
+        draw_lines(x - 125, y - 400, x - 150, y - 400)
+        draw_lines(x - 400, y - 200, x - 375, y - 200)
+        draw_lines(x - 325, y - 300, x - 300, y - 300)
+        draw_lines(x - 175, y - 325, x - 150, y - 325)
+        draw_lines(x - 175, y - 250, x - 150, y - 250)
+        draw_lines(x - 325, y - 350, x - 300, y - 350)
+        draw_lines(x - 150, y - 350, x - 125, y - 350)
+        draw_lines(x - 300, y - 375, x - 250, y - 375)
+        draw_lines(x - 100, y - 200, x - 75, y - 200)
+        draw_lines(x - 375, y - 175, x - 350, y - 175)
+        draw_lines(x - 400, y - 250, x - 375, y - 250)
+        draw_lines(x - 150, y - 250, x - 125, y - 250)
+        draw_lines(x - 375, y - 275, x - 350, y - 275)
+        draw_lines(x - 150, y - 275, x - 125, y - 275)
+        draw_lines(x - 350, y - 300, x - 325, y - 300)
+        draw_lines(x - 150, y - 300, x - 125, y - 300)
+        draw_lines(x - 250, y - 325, x - 200, y - 325)
+        draw_lines(x - 250, y - 350, x - 200, y - 350)
+        draw_lines(x - 325, y - 375, x - 300, y - 375)
+        draw_lines(x - 175, y - 375, x - 200, y - 375)
+        draw_lines(x - 350, y - 400, x - 325, y - 400)
+        draw_lines(x - 150, y - 400, x - 175, y - 400)
+        draw_lines(x - 325, y - 175, x - 300, y - 175)
+        draw_lines(x - 175, y - 175, x - 200, y - 175)
+        draw_lines(x - 350, y - 200, x - 325, y - 200)
+        draw_lines(x - 150, y - 200, x - 175, y - 200)
+        draw_lines(x - 350, y - 225, x - 325, y - 225)
+        draw_lines(x - 150, y - 225, x - 175, y - 225)
+        draw_lines(x - 300, y - 300, x - 275, y - 300)
+        draw_lines(x - 200, y - 350, x - 175, y - 350)
+        draw_lines(x - 200, y - 175, x - 175, y - 175)
+        draw_lines(x - 300, y - 400, x - 275, y - 400)
+        draw_lines(x - 200, y - 400, x - 175, y - 400)
+        draw_lines(x - 425, y - 350, x - 400, y - 350)
+        draw_lines(x - 75, y - 350, x - 100, y - 350)
+        draw_lines(x - 350, y - 400, x - 325, y - 400)
+        draw_lines(x - 150, y - 400, x - 175, y - 400)
+        draw_lines(x - 350, y - 300, x - 325, y - 300)
+        draw_lines(x - 150, y - 300, x - 175, y - 300)
+        draw_lines(x - 300, y - 150, x - 275, y - 150)
+        draw_lines(x - 200, y - 150, x - 225, y - 150)
+        draw_lines(x - 325, y - 275, x - 300, y - 275)
+        draw_lines(x - 175, y - 275, x - 200, y - 275)
+        draw_lines(x - 375, y - 200, x - 350, y - 200)
+        draw_lines(x - 125, y - 200, x - 150, y - 200)
+        draw_lines(x - 325, y - 225, x - 300, y - 225)
+        draw_lines(x - 175, y - 225, x - 200, y - 225)
+        draw_lines(x - 325, y - 125, x - 300, y - 125)
+        draw_lines(x - 175, y - 125, x - 200, y - 125)
+        draw_lines(x - 350, y - 150, x - 325, y - 150)
+        draw_lines(x - 150, y - 150, x - 175, y - 150)
+        draw_lines(x - 400, y - 325, x - 375, y - 325)
+        draw_lines(x - 100, y - 325, x - 125, y - 325)
+        draw_lines(x - 350, y - 100, x - 325, y - 100)
+        draw_lines(x - 150, y - 100, x - 175, y - 100)
+        draw_lines(x - 350, y - 375, x - 325, y - 375)
+        draw_lines(x - 150, y - 375, x - 175, y - 375)
+        draw_lines(x - 300, y - 325, x - 275, y - 325)
+        draw_lines(x - 200, y - 375, x - 175, y - 375)
+        draw_lines(x - 325, y - 300, x - 300, y - 300)
+        draw_lines(x - 175, y - 350, x - 150, y - 350)
+        draw_lines(x - 200, y - 200, x - 175, y - 200)
+        draw_lines(x - 300, y - 400, x - 275, y - 400)
+        draw_lines(x - 200, y - 400, x - 175, y - 400)
+        draw_lines(x - 375, y - 250, x - 350, y - 250)
+        draw_lines(x - 125, y - 250, x - 150, y - 250)
+        draw_lines(x - 400, y - 275, x - 375, y - 275)
+        draw_lines(x - 100, y - 275, x - 125, y - 275)
+        draw_lines(x - 325, y - 400, x - 300, y - 400)
+        draw_lines(x - 175, y - 400, x - 200, y - 400)
+        draw_lines(x - 375, y - 150, x - 350, y - 150)
+        draw_lines(x - 125, y - 150, x - 150, y - 150)
+        draw_lines(x - 325, y - 350, x - 300, y - 350)
+        draw_lines(x - 175, y - 300, x - 150, y - 300)
+        draw_lines(x - 200, y - 225, x - 175, y - 225)
+        draw_lines(x - 300, y - 325, x - 275, y - 325)
+        draw_lines(x - 200, y - 375, x - 175, y - 375)
+        draw_lines(x - 350, y - 375, x - 325, y - 375)
+        draw_lines(x - 150, y - 350, x - 125, y - 350)
+        draw_lines(x - 350, y - 200, x - 325, y - 200)
+        draw_lines(x - 150, y - 175, x - 125, y - 175)
+        draw_lines(x - 325, y - 150, x - 300, y - 150)
+        draw_lines(x - 175, y - 100, x - 200, y - 100)
+        draw_lines(x - 375, y - 300, x - 350, y - 300)
+        draw_lines(x - 125, y - 350, x - 150, y - 350)
+        draw_lines(x - 375, y - 175, x - 350, y - 175)
+        draw_lines(x - 125, y - 125, x - 150, y - 125)
+        draw_lines(x - 350, y - 400, x - 325, y - 400)
+        draw_lines(x - 150, y - 400, x - 175, y - 400)
+        draw_lines(x - 350, y - 250, x - 325, y - 250)
+        draw_lines(x - 150, y - 250, x - 175, y - 250)
+        draw_lines(x - 325, y - 200, x - 300, y - 200)
+        draw_lines(x - 175, y - 150, x - 200, y - 150)
+        draw_lines(x - 325, y - 125, x - 300, y - 125)
+        draw_lines(x - 175, y - 100, x - 200, y - 100)
+        draw_lines(x - 350, y - 300, x - 325, y - 300)
+        draw_lines(x - 150, y - 350, x - 175, y - 350)
+        draw_lines(x - 350, y - 175, x - 325, y - 175)
+        draw_lines(x - 150, y - 125, x - 175, y - 125)
+        draw_lines(x - 325, y - 375, x - 300, y - 375)
+        draw_lines(x - 175, y - 400, x - 200, y - 400)
+        draw_lines(x - 375, y - 200, x - 350, y - 200)
+        draw_lines(x - 125, y - 150, x - 150, y - 150)
+        draw_lines(x - 400, y - 325, x - 375, y - 325)
+        draw_lines(x - 100, y - 375, x - 125, y - 375)
+        draw_lines(x - 375, y - 250, x - 350, y - 250)
+        draw_lines(x - 125, y - 250, x - 150, y - 250)
+        draw_lines(x - 400, y - 275, x - 375, y - 275)
+        draw_lines(x - 100, y - 275, x - 125, y - 275)
+        draw_lines(x - 325, y - 400, x - 300, y - 400)
+        draw_lines(x - 175, y - 400, x - 200, y - 400)
+        draw_lines(x - 375, y - 150, x - 350, y - 150)
+        draw_lines(x - 125, y - 150, x - 150, y - 150)
+        draw_lines(x - 325, y - 350, x - 300, y - 350)
+        draw_lines(x - 175, y - 300, x - 150, y - 300)
+        draw_lines(x - 200, y - 225, x - 175, y - 225)
+        draw_lines(x - 300, y - 325, x - 275, y - 325)
+        draw_lines(x - 200, y - 375, x - 175, y - 375)
+        draw_lines(x - 350, y - 375, x - 325, y - 375)
+        draw_lines(x - 150, y - 350, x - 125, y - 350)
+        draw_lines(x - 350, y - 200, x - 325, y - 200)
+        draw_lines(x - 150, y - 175, x - 125, y - 175)
+        draw_lines(x - 325, y - 150, x - 300, y - 150)
+        draw_lines(x - 175, y - 100, x - 200, y - 100)
+        draw_lines(x - 375, y - 300, x - 350, y - 300)
+        draw_lines(x - 125, y - 350, x - 150, y - 350)
+        draw_lines(x - 375, y - 175, x - 350, y - 175)
+        draw_lines(x - 125, y - 125, x - 150, y - 125)
+        draw_lines(x - 350, y - 400, x - 325, y - 400)
+        draw_lines(x - 150, y - 400, x - 175, y - 400)
+        draw_lines(x - 350, y - 250, x - 325, y - 250)
+        draw_lines(x - 150, y - 250, x - 175, y - 250)
+        draw_lines(x - 325, y - 200, x - 300, y - 200)
+        draw_lines(x - 175, y - 150, x - 200, y - 150)
+        draw_lines(x - 325, y - 125, x - 300, y - 125)
+        draw_lines(x - 175, y - 100, x - 200, y - 100)
+        draw_lines(x - 350, y - 300, x - 325, y - 300)
+        draw_lines(x - 150, y - 350, x - 175, y - 350)
+        draw_lines(x - 350, y - 175, x - 325, y - 175)
+        draw_lines(x - 150, y - 125, x - 175, y - 125)
+        draw_lines(x - 325, y - 375, x - 300, y - 375)
+        draw_lines(x - 175, y - 400, x - 200, y - 400)
+        draw_lines(x - 100, y - 200, x - 100, y - 150)
+        draw_lines(x - 125, y - 375, x - 100, y - 375)
+        draw_lines(x - 375, y - 425, x - 350, y - 425)
+        draw_lines(x - 275, y - 350, x - 250, y - 350)
+        draw_lines(x - 150, y - 400, x - 125, y - 400)
+        draw_lines(x - 400, y - 250, x - 375, y - 250)
+        draw_lines(x - 150, y - 250, x - 125, y - 250)
+        draw_lines(x - 275, y - 400, x - 250, y - 400)
+        draw_lines(x - 425, y - 175, x - 400, y - 175)
+        draw_lines(x - 100, y - 325, x - 75, y - 325)
+        draw_lines(x - 200, y - 300, x - 175, y - 300)
+        draw_lines(x - 425, y - 350, x - 400, y - 350)
+        draw_lines(x - 250, y - 325, x - 225, y - 325)
+        draw_lines(x - 75, y - 100, x - 50, y - 100)
+        draw_lines(x - 400, y - 375, x - 375, y - 375)
+        draw_lines(x - 125, y - 250, x - 100, y - 250)
+        draw_lines(x - 350, y - 125, x - 325, y - 125)
+        draw_lines(x - 150, y - 325, x - 125, y - 325)
+        draw_lines(x - 150, y - 100, x - 125, y - 100)
+        draw_lines(x - 175, y - 375, x - 150, y - 375)
+        draw_lines(x - 350, y - 375, x - 325, y - 375)
+        draw_lines(x - 150, y - 400, x - 125, y - 400)
+        draw_lines(x - 150, y - 150, x - 125, y - 150)
+        draw_lines(x - 300, y - 400, x - 275, y - 400)
+        draw_lines(x - 150, y - 425, x - 125, y - 425)
+        draw_lines(x - 150, y - 375, x - 125, y - 375)
+        draw_lines(x - 100, y - 150, x - 75, y - 150)
+        draw_lines(x - 125, y - 100, x - 100, y - 100)
+        draw_lines(x - 300, y - 300, x - 275, y - 300)
+        draw_lines(x - 325, y - 225, x - 300, y - 225)
+        draw_lines(x - 275, y - 200, x - 250, y - 200)
+        draw_lines(x - 325, y - 100, x - 300, y - 100)
+        draw_lines(x - 250, y - 275, x - 225, y - 275)
+        draw_lines(x - 75, y - 350, x - 50, y - 350)
+        draw_lines(x - 175, y - 150, x - 150, y - 150)
+        draw_lines(x - 100, y - 250, x - 75, y - 250)
+        draw_lines(x - 125, y - 400, x - 100, y - 400)
+        draw_lines(x - 400, y - 225, x - 375, y - 225)
+        draw_lines(x - 250, y - 300, x - 225, y - 300)
+        draw_lines(x - 250, y - 150, x - 225, y - 150)
+        draw_lines(x - 175, y - 375, x - 150, y - 375)
+        draw_lines(x - 125, y - 425, x - 100, y - 425)
+        draw_lines(x - 425, y - 150, x - 400, y - 150)
+        draw_lines(x - 400, y - 325, x - 375, y - 325)
+        draw_lines(x - 325, y - 250, x - 300, y - 250)
+        draw_lines(x - 400, y - 350, x - 375, y - 350)
+        draw_lines(x - 125, y - 150, x - 100, y - 150)
+        draw_lines(x - 100, y - 375, x - 75, y - 375)
+        draw_lines(x - 100, y - 150, x - 75, y - 150)
+        draw_lines(x - 75, y - 175, x - 50, y - 175)
+        draw_lines(x - 425, y - 400, x - 400, y - 400)
+        draw_lines(x - 300, y - 175, x - 275, y - 175)
+        draw_lines(x - 425, y - 300, x - 400, y - 300)
+        draw_lines(x - 200, y - 125, x - 175, y - 125)
+        draw_lines(x - 125, y - 375, x - 100, y - 375)
+        draw_lines(x - 375, y - 425, x - 350, y - 425)
+        draw_lines(x - 275, y - 350, x - 250, y - 350)
+        draw_lines(x - 400, y - 425, x - 375, y - 425)
+        draw_lines(x - 325, y - 275, x - 300, y - 275)
+        draw_lines(x - 175, y - 200, x - 150, y - 200)
+        draw_lines(x - 100, y - 100, x - 75, y - 100)
+        draw_lines(x - 100, y - 125, x - 75, y - 125)
+        draw_lines(x - 75, y - 400, x - 75, y - 375)
+        draw_lines(x - 100, y - 250, x - 75, y - 250)
+        draw_lines(x - 400, y - 175, x - 375, y - 175)
+        draw_lines(x - 150, y - 150, x - 125, y - 150)
+        draw_lines(x - 150, y - 225, x - 125, y - 225)
+        draw_lines(x - 175, y - 300, x - 150, y - 300)
+        draw_lines(x - 425, y - 300, x - 400, y - 300)
+        draw_lines(x - 425, y - 200, x - 400, y - 200)
+        draw_lines(x - 75, y - 150, x - 50, y - 150)
+        draw_lines(x - 75, y - 175, x - 50, y - 175)
+        draw_lines(x - 300, y - 150, x - 275, y - 150)
+        draw_lines(x - 325, y - 375, x - 300, y - 375)
+        draw_lines(x - 250, y - 200, x - 225, y - 200)
+        draw_lines(x - 275, y - 100, x - 250, y - 100)
+        draw_lines(x - 425, y - 425, x - 400, y - 425)
+        draw_lines(x - 400, y - 125, x - 375, y - 125)
+        draw_lines(x - 375, y - 225, x - 350, y - 225)
+        draw_lines(x - 100, y - 175, x - 75, y - 175)
+        draw_lines(x - 400, y - 275, x - 375, y - 275)
+        draw_lines(x - 200, y - 400, x - 175, y - 400)
+        draw_lines(x - 400, y - 300, x - 375, y - 300)
+        draw_lines(x - 300, y - 350, x - 275, y - 350)
+        draw_lines(x - 375, y - 375, x - 350, y - 375)
+
+
+# Ball
+def store(x_centre, y_centre, x, y):
+    pixels = []
+    pixels.append([x_centre + x, y_centre + y])
+    pixels.append([x_centre - x, y_centre + y])
+    pixels.append([x_centre + x, y_centre - y])
+    pixels.append([x_centre - x, y_centre - y])
+    pixels.append([x_centre + y, y_centre + x])
+    pixels.append([x_centre - y, y_centre + x])
+    pixels.append([x_centre + y, y_centre - x])
+    pixels.append([x_centre - y, y_centre - x])
+    return pixels
+
+
+def MidpointCircle(x_centre, y_centre, r):
+    x = 0
+    y = r
+    pixels = store(x_centre, y_centre, x, y)
+    D = 1 - r
+    while x <= y:
+        if D < 0:
+            x += 1
+            D = D + 2 * x + 3
+        else:
+            x += 1
+            y -= 1
+            D = D + 2 * (x - y) + 3
+        pixels += store(x_centre, y_centre, x, y)
+    return pixels
+
+
+# Maze
+def draw_points(x, y):
+    glPointSize(2)
+    glBegin(GL_POINTS)
+    glVertex2f(x / (WIDTH / 2), y / (HEIGHT / 2)) #for getting the whole thing in middle
+    glEnd()
+
+
+def find_zone(x1, y1, x2, y2):
+    dx = x2 - x1
+    dy = y2 - y1
+    if abs(dx) <= abs(dy):
+        if dx >= 0 and dy >= 0:
+            return 1
+        elif dx <= 0 and dy >= 0:
+            return 2
+        elif dx >= 0 and dy <= 0:
+            return 6
+        elif dx <= 0 and dy <= 0:
+            return 5
+    else:
+        if dx >= 0 and dy >= 0:
+            return 0
+        elif dx <= 0 and dy >= 0:
+            return 3
+        elif dx >= 0 and dy <= 0:
+            return 7
+        elif dx <= 0 and dy <= 0:
+            return 4
+
+
+def convert_zero(z, x, y):
+    if z == 0:
+        return x, y
+    elif z == 1:
+        return y, x
+    elif z == 2:
+        return y, -x
+    elif z == 3:
+        return -x, y
+    elif z == 4:
+        return -x, -y
+    elif z == 5:
+        return -y, -x
+    elif z == 6:
+        return -y, x
+    elif z == 7:
+        return x, -y
+
+
+def midpoint(z, x1, y1, x2, y2):
+    dx = x2 - x1
+    dy = y2 - y1
+    d = (2 * dy) - dx
+    dE = 2 * dy
+    dNE = 2 * (dy - dx)
+    y = y1
+    x = x1
+    while x < x2:
+        a, b = convert_zero(z, x, y)
+        draw_points(a, b)
+        if d < 0:  # next pixel: NE
+            x += 1
+            d += dE
+        else:
+            y += 1
+            x += 1
+            d += dNE  # next pixel: E
+
+
+def convert_back(z, x, y):
+    if z == 0:
+        return x, y
+    elif z == 1:
+        return y, x
+    elif z == 2:
+        return -y, x
+    elif z == 3:
+        return -x, y
+    elif z == 4:
+        return -x, -y
+    elif z == 5:
+        return -y, -x
+    elif z == 6:
+        return y, -x
+    elif z == 7:
+        return x, -y
+
+
+def draw_lines(x1, y1, x2, y2):
+    zone = find_zone(x1, y1, x2, y2)
+    a, b = convert_back(zone, x1, y1)
+    c, d = convert_back(zone, x2, y2)
+    midpoint(zone, a, b, c, d)
+
+
+
+
+def stage():
+    global lst
+    global flag
+    glColor3f(0.8, 0.8, 0.4)
+
+    t = 62.5
+    location = [(0+t, 0+t), (0+t, 500-t), (500-t, 0+t), (500-t, 500-t)]
+
+    if flag:
+        i = 0 # Region
+        lst = []
+        while i < 4:
+            r = random.randint(0, 3) # Maze
+            if r not in lst:
+                lst.append(r)
+                random_generator(r, location[i][0], location[i][1])
+                i += 1
+
+        flag = False
+
+    else:
+        for i in range(len(lst)):
+            random_generator(lst[i], location[i][0], location[i][1])
+
+    xt = 0
+    yt = 0
+    rt = 430
+    glColor3f(0.5, 0.5, 0.5)
+    draw_lines(xt-rt, yt-rt, xt+rt, yt-rt) #boundry
+    draw_lines(xt - rt, yt + rt, xt + rt, yt + rt)
+    draw_lines(xt - rt, yt - rt, xt - rt, yt + rt)
+    draw_lines(xt + rt, yt - rt, xt + rt, yt + rt)
+
+
+
+def display_func():
+
+    glClear(GL_COLOR_BUFFER_BIT)
+    glClearColor(0.0, 0.0, 0.0, 1.0)  # Set clear color to black
+    glMatrixMode(GL_MODELVIEW)
+    glLoadIdentity()
+
+    glPointSize(5)
+    glColor3f(0.2, 0.6, 0.7)
+    pixels = MidpointCircle(ball_position[0], ball_position[1], 0)
+    for i in range(1, 5, 1):
+        pixels += MidpointCircle(ball_position[0], ball_position[1], i)
+
+    glBegin(GL_POINTS)
+    for pixel in pixels:
+        glVertex2f(pixel[0] / 500, pixel[1] / 400)
+    glEnd()
+
+    stage()
+
+
+    glutSwapBuffers()
+
+
+def translate(s, a, b, c, d, e, f):
+    s_translated = []
+    t = np.array([[a, b, c],
+                  [d, e, f],
+                  [0, 0, 1]])
+
+    for point in s:
+        p = np.array([[point[0]],
+                      [point[1]],
+                      [1]])
+
+        p_prime = np.matmul(t, p)
+        s_translated.append([p_prime[0][0], p_prime[1][0]])
+
+    return s_translated
+
+
+ball_position = [-420, 0]
+direction = None
+
+
+def move_ball(s, a, b, c, d, e, f):
+    global ball_position
+    ball_transformed = translate(s, a, b, c, d, e, f)
+    ball_position = ball_transformed[0]
+
+
+def timer_func(value):
+    global ball_position, direction
+    if direction:
+        if direction == "up":
+            move_ball([ball_position], 1, 0, 0, 0, 1, 10)
+        elif direction == "down":
+            move_ball([ball_position], 1, 0, 0, 0, 1, -10)
+        elif direction == "left":
+            move_ball([ball_position], 1, 0, -10, 0, 1, 0)
+        elif direction == "right":
+            move_ball([ball_position], 1, 0, 10, 0, 1, 0)
+
+        glutPostRedisplay()
+    glutTimerFunc(10, timer_func, 0)
+
+
+def special_key_func(key, x, y):
+    global direction
+    if key == GLUT_KEY_UP:
+        direction = "up"
+    elif key == GLUT_KEY_DOWN:
+        direction = "down"
+    elif key == GLUT_KEY_LEFT:
+        direction = "left"
+    elif key == GLUT_KEY_RIGHT:
+        direction = "right"
+
+
+def special_key_all_func(key, x, y):
+    global direction
+    direction = None
+
+
+def init():
+    glClearColor(0.0, 0.0, 0.0, 0.0)
+    glMatrixMode(GL_PROJECTION)
+    glLoadIdentity()
+    glOrtho(-1.0, 1.0, -1.0, 1.0, -1.0, 1.0)
+    glMatrixMode(GL_MODELVIEW)
+    glLoadIdentity()
+
+
+if __name__ == "__main__":
+    WIDTH, HEIGHT = 900, 900
+    glutInit()
+    glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGBA)
+    glutInitWindowSize(WIDTH, HEIGHT)
+    glutCreateWindow(b"OpenGL Window")
+    init()
+
+    # Register the special key functions
+    glutSpecialFunc(special_key_func)
+    glutSpecialUpFunc(special_key_all_func)
+
+    glutDisplayFunc(display_func)
+    glutTimerFunc(10, timer_func, 0)
+    glutMainLoop()
+
+
